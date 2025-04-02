@@ -51,11 +51,15 @@ export default class FilmsComponent implements AfterViewInit {
   router = inject(Router);
   omdbService = inject(OMDBService);
 
-  columnsToDisplayS = computed(() =>
-    this.usersService.loggedUserS()
-      ? ['id', 'nazov', 'rok', 'slovenskyNazov', 'afi1998', 'afi2007']
-      : ['id', 'nazov', 'rok']
-  );
+  columnsToDisplayS = signal([
+    'id',
+    'nazov',
+    'rok',
+    'slovenskyNazov',
+    'afi1998',
+    'afi2007',
+    'actions',
+  ]);
   paginatorS = viewChild.required<MatPaginator>(MatPaginator);
   sortHeaderS = viewChild.required<MatSort>(MatSort);
 
