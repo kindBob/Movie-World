@@ -1,59 +1,94 @@
-# Films
+# Movie World 🎬
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+A modern web application for exploring and managing movie information, built with Angular and Material Design.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Movie Database**: Access a comprehensive collection of movies
+- **Detailed Information**: View detailed information about each movie including:
+  - Basic details (title, year, genre)
+  - Cast and crew information
+  - Plot summaries
+  - IMDB ratings
+  - Movie posters
+- **Search Functionality**: Find movies by title or other criteria
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Modern UI**: Clean and intuitive interface using Material Design
+
+## Technologies Used
+
+- Angular 17
+- Angular Material
+- TypeScript
+- SCSS
+- OMDB API Integration
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kindBob/Movie-World.git
+cd Movie-World
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200`
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── films/              # Films module
+│   ├── shared/             # Shared components and services
+│   └── app.component.ts    # Main app component
+├── services/
+│   └── omdb.service.ts     # OMDB API service
+└── assets/                 # Static assets
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## API Integration
 
-```bash
-ng generate --help
-```
+The application uses the OMDB API to fetch movie information. The API key is configured in the `omdb.service.ts` file.
 
-## Building
+## Contributing
 
-To build the project run:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-```bash
-ng build
-```
+## License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Running unit tests
+## Acknowledgments
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- [OMDB API](http://www.omdbapi.com/) for providing movie data
+- [Angular](https://angular.io/) for the amazing framework
+- [Angular Material](https://material.angular.io/) for the UI components
 
-```bash
-ng test
-```
+## Contact 📧
 
-## Running end-to-end tests
+For any questions or feedback, please open an issue in the GitHub repository.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Made with ❤️ by Vladyslav Kostromin
