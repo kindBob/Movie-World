@@ -1,0 +1,70 @@
+<div class="film-edit-container">
+  <h2>{{ isEditMode ? "Editácia filmu" : "Pridanie nového filmu" }}</h2>
+
+  <form [formGroup]="filmForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Názov filmu</mat-label>
+      <input
+        matInput
+        formControlName="nazov"
+        placeholder="Zadajte názov filmu"
+      />
+      <mat-error *ngIf="filmForm.get('nazov')?.hasError('required')">
+        Názov filmu je povinný
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Rok vydania</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="rok"
+        placeholder="Zadajte rok vydania"
+      />
+      <mat-error *ngIf="filmForm.get('rok')?.hasError('required')">
+        Rok vydania je povinný
+      </mat-error>
+      <mat-error
+        *ngIf="
+          filmForm.get('rok')?.hasError('min') ||
+          filmForm.get('rok')?.hasError('max')
+        "
+      >
+        Zadajte platný rok
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Slovenský názov</mat-label>
+      <input
+        matInput
+        formControlName="slovenskyNazov"
+        placeholder="Zadajte slovenský názov"
+      />
+      <mat-error *ngIf="filmForm.get('slovenskyNazov')?.hasError('required')">
+        Slovenský názov je povinný
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>IMDB ID</mat-label>
+      <input matInput formControlName="imdbID" placeholder="Zadajte IMDB ID" />
+      <mat-error *ngIf="filmForm.get('imdbID')?.hasError('required')">
+        IMDB ID je povinné
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-button type="button" (click)="onCancel()">Zrušiť</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!filmForm.valid"
+      >
+        {{ isEditMode ? "Uložiť zmeny" : "Vytvoriť film" }}
+      </button>
+    </div>
+  </form>
+</div>
