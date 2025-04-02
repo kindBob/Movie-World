@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-films',
   imports: [MaterialModule, MatProgressSpinnerModule, CommonModule],
   templateUrl: './films.component.html',
-  styleUrl: './films.component.css',
+  styleUrls: ['./films.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
